@@ -1,20 +1,29 @@
-function img1(input) {
-    if (input.files && input.files[0]) {
+document.addEventListener("DOMContentLoaded", function() {
+    var imageField1 = document.querySelector('#image-field-1');
+    var image1 = document.querySelector('#image1');
+    
+    imageField1.addEventListener('change', function() {
+      if (this.files && this.files[0]) {
         var reader = new FileReader();
-        reader.onload = function (e) {
-            $('#image1').attr('src', e.target.result);
-            $('#image1').show();
+        reader.onload = function(e) {
+          image1.setAttribute('src', e.target.result);
+          image1.style.display = 'block';
         }
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-function img2(input) {
-    if (input.files && input.files[0]) {
+        reader.readAsDataURL(this.files[0]);
+      }
+    });
+  
+    var imageField2 = document.querySelector('#image-field-2');
+    var image2 = document.querySelector('#image2');
+  
+    imageField2.addEventListener('change', function() {
+      if (this.files && this.files[0]) {
         var reader = new FileReader();
-        reader.onload = function (e) {
-            $('#image2').attr('src', e.target.result);
-            $('#image2').show();
+        reader.onload = function(e) {
+          image2.setAttribute('src', e.target.result);
+          image2.style.display = 'block';
         }
-        reader.readAsDataURL(input.files[0]);
-    }
-}
+        reader.readAsDataURL(this.files[0]);
+      }
+    });
+  });
