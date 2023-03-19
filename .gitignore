@@ -1,2 +1,5 @@
 .idea
 __pycache__*
+model/data*
+app/cnn/migrations*
+data*
